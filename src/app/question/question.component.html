@@ -1,0 +1,13 @@
+<h3>Question {{ questionIndex + 1 }} of {{ questions.length }}</h3>
+<br />
+<h5>{{ currentQuestion }}</h5>
+<p *ngFor="let option of currentOptions">
+  <input
+    (click)="setUserAnswer(option, questionIndex + 1)"
+    type="radio"
+    value="{{ option }}"
+    name="answer"
+    [checked]="isChecked(option)"
+  />
+  {{ option }}
+</p>

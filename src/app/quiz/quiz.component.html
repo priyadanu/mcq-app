@@ -1,0 +1,38 @@
+
+<div *ngIf="!quizOver">
+  <h4>{{ timer }} Seconds Left.....</h4>
+
+  <app-question
+    [questionIndex]="currentIndex"
+    (answers)="receiveAnswers($event)"
+    (totalQuestions)="getTotalQuestions($event)"
+    (disable)="getDisableValue($event)"
+  >
+  </app-question>
+  <br />
+  <button
+    type="button"
+    class="btn btn-outline-primary btn-lg mr-5"
+    (click)="goPrevious()"
+    *ngIf="currentIndex != 0"
+  >
+    Previous
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-success btn-lg"
+    (click)="goNext()"
+  >
+    Next
+  </button>
+</div>
+
+<div *ngIf="quizOver">
+  <h4>Quiz is Over!!!!!!!!!</h4>
+  <br />
+  <h3>Congratulation Your score is {{ score }} / {{ totalQuestions }}</h3>
+  <br />
+  <button type="button" class="btn btn-primary" (click)="restartQuiz()">
+    Retake Quiz
+  </button>
+</div>

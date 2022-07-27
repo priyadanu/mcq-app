@@ -1,0 +1,20 @@
+<div class="cards">
+  <div class="card-body text-center">
+    <h2>Quiz Angular Basic</h2>
+    <button type="button" class="btn btn-primary" [routerLink]="['/quiz']">
+      Start Quiz</button
+    ><br />
+    <h3>Enrich your knowledge</h3>
+    <p class="mx-auto" style="width: 200px">
+      There are total 10 questions. Time for completing the questions will be 10
+      minutes. At the end of the quiz you can see the score of the right
+      answers.
+    </p>
+  </div>
+  <div class="container border">
+    <br />
+    <router-outlet></router-outlet>
+    <br />
+  </div>
+</div>
+<br /><br />
